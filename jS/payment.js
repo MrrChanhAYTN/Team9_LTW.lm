@@ -10,16 +10,17 @@ window.onload = function(){
     if(listProductAdded != null){
         for(var i = 0; i < listProductAdded.length; i++){
             if(nameUser == listProductAdded[i].nameuser && passUser == listProductAdded[i].passuser){
+                var id = listProductAdded[i].idproduct;
                 var image = listProductAdded[i].imageproduct;
                 var name = listProductAdded[i].nameproduct;
                 var price = listProductAdded[i].priceproduct;
                 var amount = listProductAdded[i].amountproduct;
-                renderPageProductAdded(image, name, price, amount);
+                renderPageProductAdded(id, image, name, price, amount);
             }
         }
     }
 }
-function renderPageProductAdded(image, name, price, amount){
+function renderPageProductAdded(id, image, name, price, amount){
     var parentCart = document.querySelector(".listProductAdded table");
     var childCart = document.createElement("tr");
     childCart.innerHTML = `<tr>
@@ -27,6 +28,7 @@ function renderPageProductAdded(image, name, price, amount){
                                     <input id="checkSelected" onclick="checkSelected()" type="checkbox">
                                 </td>
                                 <td>
+                                    <h3 class="id" style="display: none;">${id}</h3>
                                     <img class="image" src=${image} alt="">
                                 </td>
                                 <td>
@@ -55,7 +57,7 @@ function updateTotalPayment(){
     listCheckBox.forEach(e => {
         var parentItem = e.parentElement.parentElement;
         var price = parentItem.querySelector(".price").innerText;
-        var price = price.slice(0, -1);
+        var price = price;
         amount = parentItem.querySelector(".amount").innerText;
         if(e.checked == true){
             sum += price*amount;
@@ -102,6 +104,7 @@ function saveLocal(){
                 listProductCart.push({
                     nameuser: e.nameuser,
                     passuser: e.passuser,
+                    idproduct: e.idproduct,
                     nameproduct:  e.nameproduct,
                     priceproduct: e.priceproduct,
                     imageproduct: e.imageproduct,
@@ -113,6 +116,7 @@ function saveLocal(){
     var mark = 0;
     parentEs.forEach(parentE => {
         if(mark != 0){
+            idProduct = parentE.querySelector(".id").innerText;
             nameProduct = parentE.querySelector(".name").innerText;
             priceProduct = parentE.querySelector(".price").innerText;
             imageProduct = parentE.querySelector("img").src;
@@ -120,6 +124,7 @@ function saveLocal(){
             listProductCart.push({
                 nameuser: nameUser,
                 passuser: passUser,
+                idproduct: idProduct,
                 nameproduct:  nameProduct,
                 priceproduct: priceProduct,
                 imageproduct: imageProduct,
@@ -130,10 +135,35 @@ function saveLocal(){
     })
     localStorage.setItem("InformUser", JSON.stringify(listProductCart));
 }
-function getConfirmation(){
+
+function openAD(){
+    document.querySelector(".IF-sub").classList.remove("close");
+}
+function exit(){
+    document.querySelector(".IF-sub").classList.add("close");
+}
+ 
+var address, phoneNum;
+function closeAD(){
+    address = document.getElementById("address").value;
+    phoneNum = document.getElementById("phoneNum").value;
+    if(address == "" && phoneNum == ""){
+        alert("Vui lòng nhập địa chỉ và số điện thoại");
+        return;
+    }else if(address == ""){
+        alert("Vui lòng nhập địa chỉ");
+        return;
+    }else if(phoneNum == ""){
+        alert("Vui lòng số điện thoại");
+        return;
+    }
+    document.querySelector(".IF-sub").classList.add("close");
+    setTimeout(getConfirmation(address, phoneNum), 500);
+}
+
+function getConfirmation(address, phoneNum){
     listPayment = [];
     var totalPayment = document.getElementById("totalPayment").innerText;
-    totalPayment = totalPayment.slice(0, -1);
     if(totalPayment <= 0){
         alert("Bạn chưa chọn sản phẩm");
         return;
@@ -147,11 +177,17 @@ function getConfirmation(){
         document.getElementById("totalPayment").innerText = "0$";
         var listCheckBox = document.querySelectorAll("#checkSelected");
         var Order = JSON.parse(localStorage.getItem("Order"));
+        var d = new Date();
+        var timeNow = d.getSeconds() +":"+ d.getMinutes() +":"+ d.getHours() +"  "+ d.getDate() +"/"+ Number(d.getMonth()+1) +"/"+ d.getFullYear();
         if(Order != null){
             for(var i = 0; i < Order.length; i++){
                 listPayment.push({
+                    time: Order[i].time,
+                    address: Order[i].address,
+                    phoneNum: Order[i].phoneNum,
                     nameUser: Order[i].nameUser,
                     passUser: Order[i].passUser,
+                    idProduct: Order[i].idProduct,
                     imageProduct: Order[i].imageProduct,
                     nameProduct: Order[i].nameProduct,
                     priceProduct: Order[i].priceProduct,
@@ -162,17 +198,22 @@ function getConfirmation(){
         listCheckBox.forEach(e => {
             if(e.checked == true){
                 var parentItem = e.parentElement.parentElement;
+                var id = parentItem.querySelector(".id").innerText;
                 var image = parentItem.querySelector(".image").src;
                 var price = parentItem.querySelector(".price").innerText;
                 var name = parentItem.querySelector(".name").innerText;
-                amount = parentItem.querySelector(".amount").innerText;
+                var amount = parentItem.querySelector(".amount").innerText;
                 listPayment.push({
+                    time: timeNow,
+                    address: address,
+                    phoneNum: phoneNum,
                     nameUser: nameUser,
                     passUser: passUser,
+                    idProduct: id,
                     imageProduct: image,
                     nameProduct: name,
                     priceProduct: price,
-                    amountProduct: amount,
+                    amountProduct: amount, 
                 })
             }
         })
@@ -180,9 +221,10 @@ function getConfirmation(){
             e.checked = false;
         })
         localStorage.setItem("Order", JSON.stringify(listPayment));
+        document.getElementById("address").value = "";
+        document.getElementById("phoneNum").value = "";
         return true;
-    }
-    else{
+    }else{
        return false;
     }
  }

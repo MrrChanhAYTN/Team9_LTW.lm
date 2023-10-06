@@ -5,6 +5,7 @@ btnCart.addEventListener("click", () => {
 })
 
 var listT;
+var listProduct;
 var User = JSON.parse(localStorage.getItem("currentUser"));
 var nameUser, passUser;
 if(User != null){
@@ -12,7 +13,7 @@ if(User != null){
     passUser = User.pass;
 }
 
-function renderProduct(image, name, price){
+function renderProduct(id, image, name, price){
     let cartChild = document.createElement("div");
     cartChild.classList.add("productItem");
     cartChild.innerHTML =   `<div class="imageProduct" onclick="focusInform(this)">
@@ -20,7 +21,8 @@ function renderProduct(image, name, price){
                             </div>
                             <div class="InformProduct" onclick="focusInform(this)">
                             <h4 class="name">${name}</h4>
-                            <span class="price">${price}$</span>
+                            <h4 class="id" style="display: none;">${id}</h4>
+                            <span class="price">${price}</span>
                             </div>
                             <div class="btn" onclick="getInformProduct(this)">
                             <button>
@@ -38,26 +40,31 @@ function randomShow(){
     var similarO = Math.floor(Math.random() * 12);
     if(listProduct != null)
     for(var i = 0; i < 4; i++){
+        var id = listProduct[similarO+i].id;
         var image = listProduct[similarO+i].image;
         var name = listProduct[similarO+i].name;
         var price = listProduct[similarO+i].price;
-        renderProduct(image, name, price);
+        renderProduct(id, image, name, price);
     }
 }
 renderInform();
 function renderInform(){
     listT = JSON.parse(localStorage.getItem("listT"));
     listProduct = JSON.parse(localStorage.getItem("listProduct"));
+    var id = listT[0].id;
     var image = listT[0].image;
     var name = listT[0].name;
     var price = listT[0].price;
     var title;
-    if(listProduct != null)
-    for(var i = 0; i < listProduct.length; i++){
-        priceTmp = listProduct[i].price + "$";
-        if(name == listProduct[i].name && price == priceTmp){
-            title = listProduct[i].title;
+    if(listProduct != null){
+        for(var i = 0; i < listProduct.length; i++){
+            priceTmp = listProduct[i].price + "$";
+            if(id == listProduct[i].id){
+                title = listProduct[i].title;
+            }
         }
+    }else{
+        return;
     }
     var parentCart = document.querySelector("#parentItem");
     var childCart = document.createElement("div");
@@ -66,6 +73,9 @@ function renderInform(){
                                     <img src=${image} alt="">
                                 </div>
                                 <div class="mainProduct__subContent">
+                                    <div class="mainProduct__subContent--id" style="display: none">
+                                        <h2>${id}</h2>
+                                    </div>
                                     <div class="mainProduct__subContent--name">
                                         <h2>${name}</h2>
                                     </div>
@@ -95,10 +105,11 @@ function getInformMainProduct(e){
     }
     var parentBtn = e.parentElement.parentElement.parentElement;
     var image = parentBtn.querySelector(".mainProduct__image img").src;
+    var id = parentBtn.querySelector(".mainProduct__subContent--id h2").innerText;
     var name = parentBtn.querySelector(".mainProduct__subContent--name h2").innerText;
     var price = parentBtn.querySelector(".mainProduct__subContent--price span").innerText;
     var amount = parentBtn.querySelector(".amount").innerText;
-    addProduct(image, name, price, amount);
+    addProduct(id, image, name, price, amount);
 }
 function getInformProduct(e){
     if(User == null){
@@ -107,19 +118,18 @@ function getInformProduct(e){
     }
     var parentBtn = e.parentElement;
     var image = parentBtn.querySelector(".imageProduct img").src;
+    var id = parentBtn.querySelector(".InformProduct .id").innerText;
     var name = parentBtn.querySelector(".InformProduct .name").innerText;
     var price = parentBtn.querySelector(".InformProduct .price").innerText;
-    addProduct(image, name, price, 1);
+    addProduct(id, image, name, price, 1);
 }
 // add product to cart
-function addProduct(image, name, price, amount){
+function addProduct(id, image, name, price, amount){
     var mark = 0;
     const productAddeds = document.querySelectorAll(".InterfaceCart table tr");
     productAddeds.forEach(product => {
-        var namelast = product.querySelector(".name").innerText;
-        var pricelast = product.querySelector(".price").innerText;
-        var imagelast = product.querySelector("img").src;
-        if(name == namelast && price == pricelast && image == imagelast){
+        var idT = product.querySelector(".id").innerText;
+        if(idT == id){
             var e = product.querySelector(".ti-plus");
             if(amount == 1){
                 plusAmountProduct(e, 1);
@@ -142,6 +152,7 @@ function addProduct(image, name, price, amount){
                             <img src=${image} alt="">
                         </td>
                         <td class="inform--amount">
+                            <h4 class="id" style="display: none;">${id}</h4>
                             <h4 class="name">${name}</h4>
                             <span class="price">${price}</span>
                             <ti class="ti-minus" onclick="minusAmountProduct(this)"></ti>
@@ -190,6 +201,7 @@ function saveLocal(){
                 listProductCart.push({
                     nameuser: e.nameuser,
                     passuser: e.passuser,
+                    idproduct: e.idproduct,
                     nameproduct:  e.nameproduct,
                     priceproduct: e.priceproduct,
                     imageproduct: e.imageproduct,
@@ -199,13 +211,15 @@ function saveLocal(){
         })
     }
     parentEs.forEach(parentE => {
-        nameProduct = parentE.querySelector(".name").innerText;
-        priceProduct = parentE.querySelector(".price").innerText;
-        imageProduct = parentE.querySelector("img").src;
-        amountProduct = parentE.querySelector(".amount").innerText;
+        var id = parentE.querySelector(".id").innerText;
+        var nameProduct = parentE.querySelector(".name").innerText;
+        var priceProduct = parentE.querySelector(".price").innerText;
+        var imageProduct = parentE.querySelector("img").src;
+        var amountProduct = parentE.querySelector(".amount").innerText;
         listProductCart.push({
             nameuser: nameUser,
             passuser: passUser,
+            idproduct: id,
             nameproduct:  nameProduct,
             priceproduct: priceProduct,
             imageproduct: imageProduct,
@@ -219,18 +233,20 @@ function uploadCartOfUser(){
     if(productOnCart != null){
         for(var i = 0; i < productOnCart.length; i++){
             if(nameUser == productOnCart[i].nameuser && passUser == productOnCart[i].passuser){
-                addProduct(productOnCart[i].imageproduct, productOnCart[i].nameproduct, productOnCart[i].priceproduct, productOnCart[i].amountproduct);
+                addProduct(productOnCart[i].idproduct, productOnCart[i].imageproduct, productOnCart[i].nameproduct, productOnCart[i].priceproduct, productOnCart[i].amountproduct);
             }
         }
     }
 }
 function focusInform(e){
     var parentCart = e.parentElement;
+    var id = parentCart.querySelector(".id").innerText;
     var image = parentCart.querySelector("img").src;
     var name = parentCart.querySelector(".name").innerText;
     var price = parentCart.querySelector(".price").innerText;
     var listT = [
         {
+            id: id,
             image: image,
             name: name,
             price: price

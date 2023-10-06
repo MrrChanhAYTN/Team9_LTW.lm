@@ -39,9 +39,23 @@
             </tr>
         </table>
     </div>
+    <div class="IF-sub">
+        <div class="address--phoneNum">
+            <ti class="ti-close" onclick="exit()"></ti>
+            <div class="address">
+                <input type="text" name="" id="address" placeholder="Vui lòng nhập địa chỉ nhận hàng">
+            </div>
+            <div class="phoneNum">
+                <input type="text" name="" id="phoneNum" placeholder="Vui lòng nhập số điện thoại">
+            </div>
+            <div class="btnSubmit">
+                <button onclick="closeAD()">Xác nhận</button>
+            </div>
+        </div>
+    </div>
     <div class="productsSelected">
         <h2>Tổng tiền phải thanh toán: <span id="totalPayment">0$</span></h2>
-        <button onclick="getConfirmation()">Mua</button>
+        <button onclick="openAD()">Mua</button>
     </div>
 </body>
 <script src="jS/payment.js"></script>

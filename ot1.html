@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="inA" type="text" style="width: 300px; height: 50px">
+    <input class="inB" type="text" style="width: 300px; height: 50px">
+    <button onclick="tinhtoan()" style="width: 300px; height: 50px"></button>
+</body>
+<script>
+    function tinhtoan(){
+        var a = document.querySelector(".inA");
+        var b = document.querySelector(".inB");
+        if((a.value).length == 0 || Number.isFinite(Number(a.value)) == false){
+            console.log(Number.isFinite(Number(a.value)));
+            a.value = "";
+            a.focus();
+            confirm("aaaa")
+            return;
+        }
+        a.value = Number(a.value)+Number(b.value);
+    }
+</script>
+</html>

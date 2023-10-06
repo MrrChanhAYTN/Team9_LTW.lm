@@ -30,7 +30,7 @@
     right: 0px;
     width: 500px;
     height: 100vh;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     background-color: rgb(234, 217, 217);
     overflow: scroll;
 }
@@ -103,8 +103,8 @@
     margin-top: 100px;
 }
 .mainProduct .mainProduct__image img{
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    height: 200px;
     min-height: 300px;
     object-fit: cover;
 }

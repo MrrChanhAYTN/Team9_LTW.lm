@@ -9,39 +9,40 @@
     <link rel="stylesheet" href="themify-icons/themify-icons.css">
     <title>Document</title>
 </head>
-<body>
+<body style="background-image: url(image/backgroundSlide.png); background-size: cover;">
     <div class="menuBar__main">
         <div class="logo">
             <img src="image/logo.png" alt="">
         </div>
         <div class="menuBar__main--icon">
-            <div class="notification">
-                <ti class="ti-bell"></ti>
-            </div>
             <div class="gmail">
-                <ti class="ti-email"></ti>
+                <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1" style="text-decoration: none;">
+                    <ti class="ti-email"></ti>
+                </a>
             </div>
             <div class="menuIcon">
                 <ti class="ti-menu" onclick="openMenu()"></ti>
             </div>
             <div class="user">
-                <ti class="ti-user"></ti>
+                <a href="http://127.0.0.1:5500/login.html" style="text-decoration: none;">
+                    <ti class="ti-user"></ti>
+                </a>
             </div>
         </div>
     </div>
     <div class="menuBar__sub closeLeft" style="background-image: url(image/backgroundSlide.png);">
         <ul class="links">
             <li class="link">
-                <h4 onclick="openSubList(this)">PRODUCT MANAGEMENT</h4>
+                <h4 onclick="openSubList(this)" id="openSubList">PRODUCT MANAGEMENT</h4>
                 <ti onclick="openSubList(this)" class="ti-angle-down rotate"></ti>
                 <ul class="link--sub close">
-                    <li class="add">Add product
+                    <li class="add" onclick="uploadInterfaceAddProduct()">Add product
                         <ti class="ti-cloud-up"></ti>
                     </li>
-                    <li class="edit">Edit product
+                    <li class="edit" onclick="uploadInterfaceEdit()">Edit product
                         <ti class="ti-wand"></ti>
                     </li>
-                    <li class="remove">Remove product
+                    <li class="remove" onclick="uploadProductList()">Remove product
                         <ti class="ti-trash"></ti>
                     </li>
                 </ul>
@@ -53,7 +54,7 @@
                     <li class="listUser" onclick="uploadUserList()">User list
                         <ti class="ti-notepad"></ti>
                     </li>
-                    <li class="order">Order
+                    <li class="order" onclick="uploadInterfaceOrder()">Order
                         <ti class="ti-truck"></ti>
                     </li>
                 </ul>
@@ -61,16 +62,147 @@
         </ul>
         <ti class="ti-arrow-left" onclick="closeMenu()"></ti>
     </div>
+    <div class="addProduct" style="display: none;">
+        <div class="add">
+            <div class="Upimage" >
+                <label for="ipFile" id="lableImage" style="background-image: url(image/backgroundSlide.png);">
+                    Click để thêm ảnh
+                </label>
+                <input type="file" name="image" style="display: none;" id="ipFile">
+            </div>
+            <div class="Upname">
+                <input type="text" name="name" id="ipName" placeholder="Nhập tên sản phẩm">
+            </div>
+            <div class="Upprice">
+                <input type="text" name="price" id="ipPrice" placeholder="Nhập giá sản phẩm">
+            </div>
+            <div class="Uptitle">
+                <input type="text" name="title" id="ipTitle" placeholder="Nhập nội dụng mô tả sản phẩm">
+            </div>
+            <div class="Uptype">
+                <input type="text" name="type" id="ipType" placeholder="Nhập loại sản phẩm: Cake, Candy, Cookie, Bread, Croissants, Lollipop.">
+            </div>
+            <div class="Upamount">
+                <input type="text" name="type" id="ipAmount" placeholder="Nhập số lượng sản phẩm">
+            </div>
+            <div class="btn">
+                <button id="addProduct" onclick=save()>Thêm</button>
+                <button onclick="preview()">Xem trước</button>
+            </div>
+        </div>
+    </div>
+    <div class="removeProduct" style="display: none;">
+        <div class="tableListProduct">
+            <!--  -->
+        </div>
+    </div>
+    <div class="editProduct" style="display: none;">
+        <div class="nametable">
+            <h3>CHỈNH SỬA THÔNG TIN SẢN PHẨM</h3>
+        </div>
+        <div class="getID">
+            <label for="ipIdEdit">Nhập id sản phẩm cần chỉnh sửa: </label>
+            <input type="text" id="ipIdEdit">
+            <button id="btnSearch" onclick="search()">Tìm</button>
+        </div>
+        <div class="InterfaceEdit">
+            <div class="beforeEdit">
+                <div class="image">
+                        <label for="">IMAGE: </label>
+                        <img class="img" src="" alt="">
+                </div>
+                <div class="inform">
+                    <div class="id">
+                        <label for="">ID: </label>
+                        <h4></h4>
+                    </div>
+                    <div class="name">
+                        <label for="Name">NAME: </label>
+                        <h4></h4>
+                    </div>
+                    <div class="price">
+                        <label for="Price">PRICE: </label>
+                        <h4></h4>
+                    </div>
+                    <div class="type">
+                        <label for="Type">TYPE: </label>
+                        <h4></h4>
+                    </div>
+                    <div class="amount">
+                        <label for="Amount">AMOUNT: </label>
+                        <h4></h4>
+                    </div>
+                    <div class="title">
+                        <label for="Title">TITLE: </label>
+                        <h4></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="afterEdit" style="display: none;">
+                <input type="file" name="" id="Image" placeholder="Chọn ảnh: ">
+                <input type="text" name="" id="Name" placeholder="Nhập tên: ">
+                <input type="text" name="" id="Price" placeholder="Nhâp giá: ">
+                <input type="text" name="" id="Type" placeholder="Nhập thể loại">
+                <input type="text" name="" id="Amount" placeholder="Nhập số lượng: ">
+                <input type="text" name="" id="Title" placeholder="Nhập nội dung: ">
+                <button id="btnEditSave" onclick="edit()">Thay đổi</button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="parentCart">
             <div class="nametable">
-                
+                <!--  -->
+            </div>
+            <div class="nameUser">
+                <h3>
+                    <!--  -->
+                </h3>
             </div>
             <table>
-                <tr>
-                    td*
-                </tr>
+                <!--  -->
             </table>
+        </div>
+    </div>
+    <div class="Order" style="display: none;">
+        <div class="nameTable">
+            <h3 class="title">BẢNG DANH SÁCH ĐƠN HÀNG</h3>
+            <div class="InterfaceOrder">
+                <div class="rowTitle">
+                    <!-- <div class="nameUser">
+                        <h4></h4>
+                    </div>
+                        <div class="nameProduct">Tên sản phẩm</div>
+                        <div class="priceProduct">Giá sản phẩm</div>
+                        <div class="amountProduct">Số lượng sản phẩm</div>
+                        <div class="btn">
+                            Xem chi tiết
+                        </div>
+                    </div> -->
+                </div>
+                <div class="OrderItem">
+                    <!-- <div class="listProduct">
+                        <div class="list">
+                            <div class="nameProduct"></div>
+                            <div class="priceProduct"></div>
+                            <div class="amountProduct"></div>
+                            <div class="btn">
+                                <button>Xem chi tiết</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="showInform" style="display: none;">
+            <!-- <div class="parent">
+                <div class="name">Tên sản phẩm: </div>
+                <div class="price">Giá sản phẩm: </div>
+                <div class="amount">Số lượng sản phẩm: </div>
+                <div class="time">Thời gian mua: </div>
+                <div class="address">Địa chỉ khách hàng: </div>
+                <div class="phoneNum">Số điện thoại: </div>
+            </div> -->
         </div>
     </div>
 

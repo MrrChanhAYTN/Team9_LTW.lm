@@ -18,8 +18,10 @@
         <ul class="menubar">
             <li><a href="http://127.0.0.1:5500/index.html">Home</a></li>
             <li><a href="http://127.0.0.1:5500/cart.html">Shop</a></li>
-            <li><a href="">Page</a></li>
             <li><a href="">Contact</a></li>
+            <li class="setting" style="display: none;"><a href="http://127.0.0.1:5500/admin.html">
+                <ti class="ti-settings"></ti>
+            </a></li>
         </ul>
         <div class="header__user--search--cart">
 
@@ -27,7 +29,7 @@
                 <ti class="ti-user" onclick="openSubmenu()"></ti>
                 <ul id="user--login-signup" class="submenu--close">
                     <li>
-                        <a href="http://127.0.0.1:5500/login.html">Login/ Sign Up</a>
+                        <a id="login" href="http://127.0.0.1:5500/login.html">Login/ Sign Up</a>
                     </li>
                     <li>
                         <a href="" onclick="logOut()">Logout</a>

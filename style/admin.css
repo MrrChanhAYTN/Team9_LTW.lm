@@ -135,3 +135,304 @@ ti:hover{
 .container table td:nth-child(4){
     width: 25%;
 }   
+
+.addProduct{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+    border: 2px solid black;
+}
+.addProduct .Upimage, .addProduct .Upname, .addProduct .Upprice,
+ .addProduct .Uptitle, .addProduct .Uptype, .addProduct .Upamount, .addProduct .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.addProduct .Upimage label{
+    width: 450px;
+    height: 150px;
+    padding: 20px;
+    border: 1px black;
+    border-style: dashed;
+    color: rgb(68, 128, 8);
+    cursor: pointer;
+    background-size: cover;
+}
+.addProduct input{
+    width: 450px;
+    height: 40px;
+    border: 1px solid black;
+    padding: 10px;
+}
+.addProduct .btn button{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    margin: 0px 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.add{
+    margin-right: 10px;
+}
+.demo{
+    width: 300px;
+    height: 300px;
+    margin-left: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+.demo .image{
+    height: 60%;
+    width: 100%;
+}
+.demo .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.demo .inform{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.demo .id--type{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*  */
+
+.removeProduct{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tableListProduct{
+    margin-top: 100px;
+    width: 80%;
+    height: 80vh;
+    border: 1px solid black;
+    overflow: scroll;
+}
+.tableListProduct .productItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 10px;
+}
+.tableListProduct .productItem div{
+    padding: 5px;
+    text-align: center;
+}
+.productItem{
+    border: 1px solid black;
+}
+.productItem .image{
+    width: 30%;
+    cursor: pointer;
+}
+.productItem .image img{
+    object-fit: cover;
+}
+.productItem .title{
+    width: 20%;
+    cursor: pointer;
+}
+.productItem .id, .productItem .name, .productItem .price, .productItem .amount, .productItem .type{
+    width: 10%;
+    cursor: pointer;
+}
+.tableListProduct .productItem .image img{
+    width: 100%;
+    height: 100px;
+}
+.tableListProduct h3{
+    text-align: center;
+    padding: 20px;
+    text-shadow: -2px 4px 4px #2f232a;
+}
+/*  */
+.editProduct{
+    margin-top: 100px;
+}
+.editProduct .getID{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.editProduct .getID button{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    margin-left: 30px;
+    border: 1px solid black;
+}
+.editProduct .nametable{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: -2px 4px 4px #2f232a;
+}
+.editProduct .getID label{
+    margin-right: 20px;
+    font-size: 18px;
+}
+.editProduct .getID input{
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    padding: 10px;
+}
+.InterfaceEdit{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.InterfaceEdit .beforeEdit label{
+    cursor: pointer;
+}
+.InterfaceEdit .afterEdit input{
+    display: block;
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+    margin: 10px 0px;
+    padding: 10px;
+}
+.beforeEdit{
+    border: 1px solid black;
+    padding: 20px;
+}
+.beforeEdit, .beforeEdit .image{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.beforeEdit .image{
+    margin-right: 20px;
+}
+.beforeEdit .inform div{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 20px 10px;
+}
+.beforeEdit .img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.afterEdit button{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.Order{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 150px;
+    position: relative;
+}
+.Order .title{
+    text-shadow: -2px 4px 4px #2f232a;
+    text-align: center;
+}
+.Order .InterfaceOrder{
+    padding: 30px 0px;
+}
+.Order .rowTitle{
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
+.Order .nameUser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Order .heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Order .heading div{
+    margin: 10px;
+    padding: 10px;
+}
+.Order .OrderItem{
+    margin: 10px 0px;
+}
+.Order .list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.Order .heading div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 5px 0px 5px 20px;
+}
+.Order .list div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 5px 0px 5px 20px;
+}
+.Order .list h4{
+    text-align: left;
+    padding: 10px;
+}
+.Order .showInform{
+    position: fixed;
+    width: 100%;
+    height: 500px;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Order .showInform .parent{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: gray;
+    top: 20px;
+    padding: 30px;
+}
+.Order .showInform .parent div{
+    margin: 10px 5px;
+}
+.ti-close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 4px;
+}
+.total{
+    background-color: #2f232a;
+    width: 100px;
+    height: 200px;
+}

@@ -3,11 +3,9 @@ var regEm = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 function errorWarning(lable, input){
     document.getElementById(lable).style.color = 'red'
-    document.getElementById(lable).style.top = '-10px'
     document.getElementById(input).style.borderBottom = '1px solid red'
 }
 function trueWarning(lable, input){
-    document.getElementById(lable ).style.top = '-10px'
     document.getElementById(lable).style.color = 'rgb(34, 140, 10)'
     document.getElementById(input).style.borderBottom = '1px solid rgb(34, 140, 10)'
 }
@@ -16,11 +14,9 @@ function myN(){
     if(x.length >= 8 && regExp.test(x)){
         trueWarning("lableName", "inputName");
     }else{
-        errorWarning("lablePass", "inputPass")
+        errorWarning("lableName", "inputName");
     }
 }
-
-
 function myP(){
     var y = document.getElementById("inputPass").value;
     if(y.length >= 6){
@@ -35,8 +31,11 @@ function myNS(){
     var x = document.getElementById("inputNameS").value;
     if(x.length >= 8 && regExp.test(x)){
         trueWarning("lableNameS", "inputNameS")
+        document.getElementById("contentMessS").style.display = "none";
     }else{
         errorWarning("lableNameS", "inputNameS")
+        document.getElementById("contentMessS").innerText = "Vui lòng nhập tên dài hơn 8 kí tự";
+        document.getElementById("contentMessS").style.display = "block";
     }
 }
 
@@ -58,7 +57,10 @@ function myES(){
         errorWarning("lableEmail", "inputEmail")
     }
 }
-
+window.onchange = () => {
+    myN();
+    myP();
+}
 const LinksignUp = document.querySelector(".linkSignup");
 const formLogin = document.querySelector("#formLogin")
 const formSignup = document.querySelector("#formSignup");
@@ -117,19 +119,23 @@ function checkDataSignUp(){
     mark = 0;
     if(list != null){
         for(var i = 0; i < list.length; i++){
-            console.log(list[i].email);
-            console.log(list[i].name);
-            if(EmailSign === list[i].email){
+            if(EmailSign === list[i].email && NameSign === list[i].name){
                 document.getElementById("inputEmail").value = '';
                 document.getElementById("contentMessS").style.display = "block";
-                document.getElementById("contentMessS").innerText = "Email đã được sử dụng"
+                document.getElementById("contentMessS").innerText = "Email và tên đã được sử dụng";
                 mark = 1;
-            }
-            if(NameSign === list[i].name){
-                document.getElementById("inputNameS").value = '';
-                document.getElementById("contentMessS").style.display = "block";
-                document.getElementById("contentMessS").innerText = "Tên người dùng đã được sử dụng"
-                mark = 1;
+            }else{
+                if(EmailSign === list[i].email){
+                    document.getElementById("inputEmail").value = '';
+                    document.getElementById("contentMessS").style.display = "block";
+                    document.getElementById("contentMessS").innerText = "Email đã được sử dụng"
+                    mark = 1;
+                }else if(NameSign === list[i].name){
+                    document.getElementById("inputNameS").value = '';
+                    document.getElementById("contentMessS").style.display = "block";
+                    document.getElementById("contentMessS").innerText = "Tên người dùng đã được sử dụng"
+                    mark = 1;
+                }
             }
         }
     }
@@ -158,32 +164,63 @@ function checkDataSignUp(){
 function navigation(){
     window.location = "http://127.0.0.1:5500/index.html";
 }
+function navigationADmin(){
+    window.location = "http://127.0.0.1:5500/admin.html";
+}
 function checkUserLogin(){
+    myN();
+    myP();
     var mark = 0;
     var NameLog = document.getElementById("inputName").value;
     var PassLog = document.getElementById("inputPass").value;
     ListUser = JSON.parse(localStorage.getItem("ListUser"));
-    if(ListUser == null){
-        document.getElementById("contentMess").style.display = "block";
-        return;
-    }
     if(regExp.test(NameLog) && NameLog.length >= 8 && PassLog.length >= 6){
-        for(var i = 0; i < ListUser.length; i++){
-            if(ListUser[i].name === NameLog && ListUser[i].pass === PassLog){
-                mark = 1
-                currentUser = {
-                    name: NameLog,
-                    pass: PassLog
+        if(NameLog === "ADMINADMIN" && PassLog === "08102003"){
+            mark = 1;
+            currentUser = {
+                name: NameLog,
+                pass: PassLog
+            }
+            localStorage.setItem("currentUser", JSON.stringify(currentUser));
+            document.getElementById("inputName").value = "";
+            document.getElementById("inputPass").value = "";
+            setTimeout(navigation, 300);
+        }else{
+            if(ListUser == null){
+                document.getElementById("contentMess").innerText = "Tài khoản không tồn tại";
+                document.getElementById("contentMess").style.display = "block";
+                setTimeout(() => {
+                    document.getElementById("contentMess").style.display = "none";
+                }, 2000);
+                return;
+            }
+            for(var i = 0; i < ListUser.length; i++){
+                if(ListUser[i].name === NameLog && ListUser[i].pass === PassLog){
+                    mark = 1
+                    currentUser = {
+                        name: NameLog,
+                        pass: PassLog
+                    }
+                    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+                    document.getElementById("inputName").value = "";
+                    document.getElementById("inputPass").value = "";
+                    setTimeout(navigation, 300);
                 }
-                localStorage.setItem("currentUser", JSON.stringify(currentUser));
-                document.getElementById("inputName").value = "";
-                document.getElementById("inputPass").value = "";
-                setTimeout(navigation, 300);
             }
         }
         if(mark == 0){
+            document.getElementById("contentMess").innerText = "Tài khoản không tồn tại";
             document.getElementById("contentMess").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("contentMess").style.display = "none";
+            }, 2000);
         }
+    }else{
+        document.getElementById("contentMess").innerText = "Vui lòng kiểm tra lại thông tin";
+        document.getElementById("contentMess").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("contentMess").style.display = "none";
+        }, 2000);
     }
     if(NameLog == ''){
         errorWarning("lableName", "inputName")
@@ -191,12 +228,4 @@ function checkUserLogin(){
     if(PassLog == ''){
         errorWarning("lablePass", "inputPass")
     }
-}
-window.onload = function(){
-    // var listSt = JSON.parse(localStorage.getItem("ListUser"));
-    // if(listSt != null){
-    //     for(var i = 0; i < listSt.length; i++){
-    //         list.push(listSt[i])
-    //     }
-    // }
 }

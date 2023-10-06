@@ -44,7 +44,7 @@ body{
     color: white;
     position: absolute;
     left: 0px;
-    top: 30px;
+    top: -10px;
     background-color: rgb(23, 12, 12);
     font-size: 13px;
     transition: all 0.2s ease-in-out;

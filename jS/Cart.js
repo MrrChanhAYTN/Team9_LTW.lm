@@ -39,8 +39,8 @@ var listProduct = [
         name: "Tranmisu",
         price: 300,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"
     },
     {
         id: 2,
@@ -48,8 +48,8 @@ var listProduct = [
         name: "Cheese Cake",
         price: 260,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"        
     },
     {
         id: 3,
@@ -57,8 +57,8 @@ var listProduct = [
         name: "Milted Chocolate",
         price: 200,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"        
     },
     {
         id: 4,
@@ -66,8 +66,8 @@ var listProduct = [
         name: "Cake On White Tray",
         price: 109,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"        
     },
     {
         id: 5,
@@ -75,8 +75,8 @@ var listProduct = [
         name: "Blue Cupcakes",
         price: 110,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"        
     },
     {
         id: 6,
@@ -84,8 +84,8 @@ var listProduct = [
         name: "Tranmisu",
         price: 300,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"        
     },
     {
         id: 7,
@@ -93,8 +93,8 @@ var listProduct = [
         name: "Cheese Cake",
         price: 260,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"        
     },
     {
         id: 8,
@@ -102,8 +102,8 @@ var listProduct = [
         name: "Chocolate CupcakeS",
         price: 106,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"    
     },
     {
         id: 9,
@@ -111,8 +111,8 @@ var listProduct = [
         name: "Brown Cake",
         price: 190,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"        
     },
     {
         id: 10,
@@ -120,8 +120,8 @@ var listProduct = [
         name: "Ice Cream Dish",
         price: 103,
         type: "Cake",
-        title: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-        
+        amount: 100,
+        title: "Product infomation snippet"        
     },
     {
         id: 11,
@@ -129,7 +129,8 @@ var listProduct = [
         name:   "dinosaur egg candy",
         price:  80,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 12,
@@ -137,7 +138,8 @@ var listProduct = [
         name:   "fruits candy",
         price:  100,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 13,
@@ -145,7 +147,8 @@ var listProduct = [
         name:   "Heart Shaped Candy",
         price:  90,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 14,
@@ -153,7 +156,8 @@ var listProduct = [
         name:   "organge candy",
         price:  50,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 15,
@@ -161,7 +165,8 @@ var listProduct = [
         name:   "Pumpkin candy",
         price:  46,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 16,
@@ -169,7 +174,8 @@ var listProduct = [
         name:   "socola candy",
         price:  30,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 17,
@@ -177,7 +183,8 @@ var listProduct = [
         name:   "apple candy",
         price:  20,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 18,
@@ -185,7 +192,8 @@ var listProduct = [
         name:   "Heart Shaped Candy",
         price:  90,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 19,
@@ -193,7 +201,8 @@ var listProduct = [
         name:   "organge candy",
         price:  50,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
     {
         id: 20,
@@ -201,8 +210,108 @@ var listProduct = [
         name:   "soft candy",
         price:  10,
         type: "Candy",
-        title: "candy candy candy candy candy candy"
+        amount: 70,
+        title: "Product infomation snippet"
     },
+    {
+        id: 21,
+        image:  "image/render17.jpg",
+        name:   "pretzels",
+        price:  100,
+        type: "Cookie",
+        amount:70, 
+        title: "Product infomation snippet"
+    },
+    {
+        id: 22,
+        image:  "image/render18.jpg",
+        name:   "nut crackers",
+        price:  100,
+        type: "Cookie",
+        amount:70, 
+        title: "product infomation snippet",
+    },
+    {
+        id: 23,
+        image:  "image/render19.jpg",
+        name:   "jam biscuits",
+        price:  100,
+        type: "Cookie",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 24,
+        image:  "image/render20.jpg",
+        name:   "almond cookie",
+        price:  100,
+        type: "Cookie",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 25,
+        image:  "image/render21.jpeg",
+        name:   "Croissants tapioca pearls",
+        price:  100,
+        type: "Croissants",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 26,
+        image:  "image/render22.jpg",
+        name:   "Croissants ",
+        price:  90,
+        type: "Croissants",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 27,
+        image:  "image/render23.jpg",
+        name:   "Croissants core seed ",
+        price:  70,
+        type: "Croissants",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 28,
+        image:  "image/render24.jpg",
+        name:   "Chocolate Croissants  ",
+        price:  200,
+        type: "Croissants",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 29,
+        image:  "image/render25.jpg",
+        name:   "Christmas Lollipop  ",
+        price:  50,
+        type: "Lollipop",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 30,
+        image:  "image/render26.jpg",
+        name:   "Suger Lollipop  ",
+        price:  30,
+        type: "Lollipop",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 31,
+        image:  "image/render27.jpg",
+        name:   "rainbow Lollipop  ",
+        price:  20,
+        type: "Lollipop",
+        amount:70, 
+        title: "product infomation snippet",},
+    {
+        id: 32,
+        image:  "image/render28.jpg",
+        name:   "Apple Lollipop  ",
+        price:  20,
+        type: "Lollipop",
+        amount:70,
+        title: "product infomation snippet"
+    }
 ];
 var listTmp = [];
 var pageNumber = 1, listBtn, btnAdds, typeName ='', pages, regExp = /[a-zA-Z]/g;
@@ -218,45 +327,13 @@ const layoutFull = document.querySelector(".ti-layout-width-full");
 layoutGrid.addEventListener("click", () => {
     document.getElementById("searchIp").value = '';
     typeLayout = 0;
+    document.querySelector(".filter").classList.add("close");
 })
 layoutFull.addEventListener("click", () => {
     document.getElementById("searchIp").value = '';
     typeLayout = 1;
 })
-// search
-function Search(){
-    listTmp = [];
-    var parentItem = document.getElementById("parentItem");
-    parentItem.innerHTML = '';
-    var dataSearch = document.getElementById("searchIp").value.trim().toLowerCase();
-    if(dataSearch == ''){
-        parentItem.innerHTML = `<h3 style="margin-top: 200px;">Không tìm thấy kết quả</h3>`
-        document.querySelector(".filter").classList.add("close")
-        document.getElementById("pageSales").classList.add("close");
-        return;
-    }
-    for(var i = 0; i < listProduct.length; i++){
-        if((listProduct[i].name.toLowerCase()).includes(dataSearch) == true
-        || String(listProduct[i].price).includes(dataSearch) == true
-        || (listProduct[i].type.toLowerCase()).includes(dataSearch) == true){
-            listTmp.push({
-                image: listProduct[i].image,
-                name: listProduct[i].name,
-                price: listProduct[i].price,
-                type: listProduct[i].type
-            })
-            renderProduct(listProduct[i].image, listProduct[i].name, listProduct[i].price);
-        }
-    }
-    if(parentItem.innerHTML == ''){
-        parentItem.innerHTML = `<h3 style="margin-top: 200px;">Không tìm thấy kết quả</h3>`
-        document.querySelector(".filter").classList.add("close")
-        document.getElementById("pageSales").classList.add("close");
-        return;
-    }
-    document.querySelector(".filter").classList.remove("close");
-    document.getElementById("pageSales").classList.add("close");
-}
+
 // sort low-hight
 function sortLowToHight(){
     var list = document.querySelectorAll(".productItem");
@@ -356,15 +433,18 @@ function clickSwitchPageRight(){
     changeBackGImagebtnList();
 }
 // render product
-function renderProduct(image, name, price){
+function renderProduct(id, image, name, price){
     let cartChild = document.createElement("div");
     cartChild.classList.add("productItem");
     cartChild.innerHTML =   `<div class="imageProduct" onclick="focusInform(this)">
                                 <img src= ${image} alt="">
                             </div>
+                            <div class="id" style="display: none">
+                                <h4>${id}</h4>
+                            </div>
                             <div class="InformProduct" onclick="focusInform(this)">
                                 <h4 class="name">${name}</h4>
-                                <span class="price">${price}$</span>
+                                <span class="price">${price}</span>
                              </div>
                             <div class="btn" onclick="getInformProduct(this)">
                                 <button>
@@ -379,15 +459,16 @@ function renderProduct(image, name, price){
 // focusInform
 function focusInform(e){
     var parentCart = e.parentElement;
+    var id = parentCart.querySelector(".id h4").innerText;
     var image = parentCart.querySelector("img").src;
     var name = parentCart.querySelector(".name").innerText;
     var price = parentCart.querySelector(".price").innerText;
     var listT = [
         {
+            id: id,
             image: image,
             name: name,
             price: price
-
         }
     ]
     localStorage.setItem("listT", JSON.stringify(listT));
@@ -399,7 +480,7 @@ function updateProductAll(){
     let parentItem = document.getElementById("parentItem");
     parentItem.innerHTML = '';
     for(var i = 0; i < listProduct.length; i++){
-        renderProduct(listProduct[i].image, listProduct[i].name, listProduct[i].price);
+        renderProduct(listProduct[i].id, listProduct[i].image, listProduct[i].name, listProduct[i].price);
     }
 }
 // render product of page
@@ -410,7 +491,7 @@ function updateProductOfPageNum(pageNumber){
     var end = Number(pageNumber)*8;
     for(var i = start; i < end; i++){
         if(i < listProduct.length){
-            renderProduct(listProduct[i].image, listProduct[i].name, listProduct[i].price);
+            renderProduct(listProduct[i].id, listProduct[i].image, listProduct[i].name, listProduct[i].price);
         }
     }
 }
@@ -418,13 +499,14 @@ function updateProductOfPageNum(pageNumber){
 // make information product after added
 function getInformProduct(e){
     parentBtn = e.parentElement;
+    var id = parentBtn.querySelector(".id h4").innerText;
     var image = parentBtn.querySelector(".imageProduct img").src;
     var name = parentBtn.querySelector(".InformProduct .name").innerText;
     var price = parentBtn.querySelector(".InformProduct .price").innerText;
-    addProduct(image, name, price, 1);
+    addProduct(id, image, name, price, 1);
 }
 // add product to cart
-function addProduct(image, name, price, amount){
+function addProduct(id, image, name, price, amount){
     if(User == null){
         window.location = "http://127.0.0.1:5500/login.html";
         return;
@@ -444,20 +526,22 @@ function addProduct(image, name, price, amount){
     if(mark == 1){
         return;
     }
+    console.log(price)
     let childCart = document.createElement("tr");
     childCart.innerHTML = `<td class="image">
                             <img src=${image} alt="">
-                        </td>
-                        <td class="inform--amount">
+                            </td>
+                            <td class="inform--amount">
+                            <h4 class="id" style="display: none;">${id}</h4>
                             <h4 class="name">${name}</h4>
                             <span class="price">${price}</span>
                             <ti class="ti-minus" onclick="minusAmountProduct(this)"></ti>
                             <span class="amount">${amount}</span>
                             <ti class="ti-plus" onclick="plusAmountProduct(this)"></ti>
-                        </td>
-                        <td>
+                            </td>
+                            <td>
                             <ti class="ti-trash" onclick="deleteProduct(this)"></ti>
-                        </td>`
+                            </td>`
     document.querySelector(".InterfaceCart table").append(childCart);
     saveLocal();
 }
@@ -499,6 +583,39 @@ function chooseType(e){
         typeName = e.innerText;
     }
 }
+// search
+function Search(){
+    listTmp = [];
+    var parentItem = document.getElementById("parentItem");
+    parentItem.innerHTML = '';
+    var dataSearch = document.getElementById("searchIp").value.trim().toLowerCase();
+    if(dataSearch == ''){
+        parentItem.innerHTML = `<h3 style="margin-top: 200px;">Không tìm thấy kết quả</h3>`
+        document.querySelector(".filter").classList.add("close")
+        document.getElementById("pageSales").classList.add("close");
+        return;
+    }
+    for(var i = 0; i < listProduct.length; i++){
+        if((listProduct[i].name.toLowerCase()).includes(dataSearch) == true
+        || String(listProduct[i].price).includes(dataSearch) == true
+        || (listProduct[i].type.toLowerCase()).includes(dataSearch) == true){
+            listTmp.push({
+                id: listProduct[i].id,
+                image: listProduct[i].image,
+                name: listProduct[i].name,
+                price: listProduct[i].price,
+                type: listProduct[i].type
+            })
+        }
+    }
+    document.querySelector(".filter").classList.remove("close");
+    document.getElementById("pageSales").classList.add("close");
+    setTimeout(() => {
+        var priceF = document.getElementById("priceF").value;
+        var priceT = document.getElementById("priceT").value;
+        Filter(priceF, priceT, typeName);
+    }, 1000);
+}
 const FilterButton = document.querySelector(".btnFilter button");
 FilterButton.addEventListener("click", () => {
     var priceF = document.getElementById("priceF").value;
@@ -512,35 +629,23 @@ function checkInputPrice(e){
     }else{
         e.classList.remove("error");
 
-    }
+    } 
 }
+
 function Filter(priceF, priceT, typeName){
     let parentItem = document.getElementById("parentItem");
     parentItem.innerHTML = '';
     document.getElementById("pageSales").classList.add("close");
-    for(var i = 0; i < listTmp.length; i++){
-        if(listTmp[i].price >= priceF && listTmp[i].price <= priceT && listTmp[i].type == typeName){
-            renderProduct(listTmp[i].image, listTmp[i].name, listTmp[i].price);
-        }else if(priceF == '' && priceT == '' && typeName == ''){
-            updateProductAll();
-            return;
-        }else if(priceF == '' && priceT == '' && listTmp[i].type == typeName){
-            renderProduct(listTmp[i].image, listTmp[i].name, listTmp[i].price);
-        }else if(listTmp[i].price >= priceF && listTmp[i].price <= priceT && typeName == ''){
-            renderProduct(listTmp[i].image, listTmp[i].name, listTmp[i].price);
-        }else if(regExp.test(priceF) || regExp.test(priceT)){
-            parentItem.innerHTML = `<h3 style="margin-top: 200px;">Vui lòng nhập giá trị bằng số</h3>`;
-            return;
-        }else if(priceF == '' && listTmp[i].price <= priceT && listTmp[i].type == typeName){
-            renderProduct(listTmp[i].image, listTmp[i].name, listTmp[i].price);
-        }else if(priceF == '' && listTmp[i].price <= priceT && typeName == ''){
-            renderProduct(listTmp[i].image, listTmp[i].name, listTmp[i].price);
-        }else if(priceT == '' && listTmp[i].price >= priceF && listTmp[i].type == typeName){
-            renderProduct(listTmp[i].image, listTmp[i].name, listTmp[i].price);
-        }else if(priceT == '' && listTmp[i].price >= priceF && typeName == ''){
-            renderProduct(listTmp[i].image, listTmp[i].name, listTmp[i].price);
-        }
+    if(regExp.test(priceF) || regExp.test(priceT)){
+        parentItem.innerHTML = `<h3 style="margin-top: 200px;">Vui lòng nhập giá trị bằng số</h3>`;
+        return; 
     }
+    let arr = listTmp.filter((item) => {
+        return (priceF != '' ? item.price > priceF : true)  && (priceT != '' ? item.price < priceT : true) && (typeName != '' ? item.type == typeName : true);
+    })
+    arr.forEach(item => {
+        renderProduct(item.id, item.image, item.name, item.price);
+    });
     if(parentItem.innerHTML == ''){
         parentItem.innerHTML = `<h3 style="margin-top: 200px;">Không tìm thấy kết quả</h3>`
     }
@@ -560,14 +665,14 @@ function uploadCartOfUser(){
     if(productOnCart != null){
         for(var i = 0; i < productOnCart.length; i++){
             if(nameUser == productOnCart[i].nameuser && passUser == productOnCart[i].passuser){
-                addProduct(productOnCart[i].imageproduct, productOnCart[i].nameproduct, productOnCart[i].priceproduct, productOnCart[i].amountproduct);
+                addProduct(productOnCart[i].idproduct, productOnCart[i].imageproduct, productOnCart[i].nameproduct, productOnCart[i].priceproduct, productOnCart[i].amountproduct);
             }
         }
     }
 }
 function saveLocal(){
     const parentEs = document.querySelectorAll(".InterfaceCart table tr");
-    var nameProduct, imageProduct, priceProduct, amountProduct;
+    var id, nameProduct, imageProduct, priceProduct, amountProduct;
     listProductCart = [];
     var listSaved = JSON.parse(localStorage.getItem("InformUser"));
     if(User == null){
@@ -580,6 +685,7 @@ function saveLocal(){
                 listProductCart.push({
                     nameuser: e.nameuser,
                     passuser: e.passuser,
+                    idproduct: e.idproduct,
                     nameproduct:  e.nameproduct,
                     priceproduct: e.priceproduct,
                     imageproduct: e.imageproduct,
@@ -589,6 +695,7 @@ function saveLocal(){
         })
     }
     parentEs.forEach(parentE => {
+        id = parentE.querySelector(".id").innerText;
         nameProduct = parentE.querySelector(".name").innerText;
         priceProduct = parentE.querySelector(".price").innerText;
         imageProduct = parentE.querySelector("img").src;
@@ -596,6 +703,7 @@ function saveLocal(){
         listProductCart.push({
             nameuser: nameUser,
             passuser: passUser,
+            idproduct: id,
             nameproduct:  nameProduct,
             priceproduct: priceProduct,
             imageproduct: imageProduct,
@@ -605,9 +713,12 @@ function saveLocal(){
     localStorage.setItem("InformUser", JSON.stringify(listProductCart));
 }
 window.onload = function(){
-    updateNumericalOrder();
-    updateProductOfPageNum(1);
-    localStorage.setItem("listProduct", JSON.stringify(listProduct));
+    JSON.parse(localStorage.getItem("listProduct")) == null ? localStorage.setItem("listProduct", JSON.stringify(listProduct)) : ""
+    listProduct =  JSON.parse(localStorage.getItem("listProduct"));
+    if(listProduct != null){
+        updateNumericalOrder();
+        updateProductOfPageNum(1);
+    }
     listBtn = document.querySelectorAll("h5");
     uploadCartOfUser();
 }
